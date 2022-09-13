@@ -32,7 +32,7 @@ df.replace('?',np.nan,inplace=True)
 df['horsepower']=df['horsepower'].astype(np.float64)
 df['car_name']=df['car_name'].astype(str)
 
-# if pass, this line will execute; write df to auto-mpg.csv
+# if pass, this line will execute; write df to auto_mpg.csv
 df.to_csv('auto_mpg.csv',index=None)
 
 print("done!")
