@@ -14,15 +14,15 @@ with open("auto-mpg.data","r") as infile:
         line = line[:8] + [' '.join(line[8:])]
         data.append(','.join(line))
 
-# write out auto-mpg.csv
-with open("auto-mpg.csv","w") as outfile:
+# write out auto_mpg.csv
+with open("auto_mpg.csv","w") as outfile:
     outfile.write("mpg,cylinders,displacement,horsepower,weight,acceleration,model_year,origin,car_name\n")
     for line in data:
         outfile.write(f"{line}\n")
 
 
 # read in as df
-df = pd.read_csv("auto-mpg.csv")
+df = pd.read_csv("auto_mpg.csv")
 
 # replace all '?' with np.nan
 df.replace('?',np.nan,inplace=True)
@@ -32,7 +32,7 @@ df.replace('?',np.nan,inplace=True)
 df['horsepower']=df['horsepower'].astype(np.float64)
 df['car_name']=df['car_name'].astype(str)
 
-# if pass, this line will execute; write df to auto_mpg.csv
+# overwrite auto_mpg.csv w/changes from df
 df.to_csv('auto_mpg.csv',index=None)
 
 print("done!")
