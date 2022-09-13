@@ -11,7 +11,7 @@ with open("auto-mpg.data","r") as infile:
         data.append(','.join(line))
 
 with open("auto-mpg.csv","w") as outfile:
-    outfile.write("mpg,cylinders,displacement,horsepower,weight,acceleration,model_year,origin,name\n")
+    outfile.write("mpg,cylinders,displacement,horsepower,weight,acceleration,model_year,origin,car_name\n")
     for line in data:
         outfile.write(f"{line}\n")
 
