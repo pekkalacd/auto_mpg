@@ -6,7 +6,7 @@ import numpy as np
 # & parse into csv delimiter repr
 data=[]
 with open("auto-mpg.data","r") as infile:
-    for i,line in enumerate(infile.readlines()):
+    for line in infile.readlines():
         line=line.strip()
         line=line.replace('"','')
         p = r'\s+'
@@ -33,6 +33,6 @@ df['horsepower']=df['horsepower'].astype(np.float64)
 df['car_name']=df['car_name'].astype(str)
 
 # if pass, this line will execute; write df to auto-mpg.csv
-df.to_csv('auto-mpg.csv')
+df.to_csv('auto_mpg.csv',index=None)
 
 print("done!")
